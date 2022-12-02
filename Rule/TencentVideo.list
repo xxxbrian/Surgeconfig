@@ -1,0 +1,7 @@
+# Tencent Video Ruleset
+
+# Application Side
+DOMAIN-SUFFIX,video.qq.com
+
+# Web Side
+DOMAIN-SUFFIX,l.qq.com
