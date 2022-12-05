@@ -1,0 +1,5 @@
+#!name=AD Block
+#!desc=More than 40K ad rules. Block common application ads, privacy tracking, behavior analysis, data statistics, flow statistics, web page hijacking.
+
+[Rule]
+RULE-SET,https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Rule/ADBlock.list,REJECT-TINYGIF
