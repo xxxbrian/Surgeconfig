@@ -38,6 +38,22 @@ No effect.
 https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Module/AllMitM.sgmodule
 ```
 
+### YouTube Advertising Block
+
+**Desc:**
+
+Removes all ads of YouTube: pre-roll video ads, text & banner ads.
+
+**Effective Order:**
+
+Low.
+
+**Install:**
+
+```
+https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Module/YouTubeAds.sgmodule
+```
+
 
 
 ## Rule Set
@@ -78,7 +94,14 @@ https://github.com/xxxbrian/Surgeconfig/blob/main/Rule/TencentVideo.list
 
 ## Script
 
-Working on it...
+### YouTube Ads
+
+Hide pic ads elements of YouTube Web.
+
+```
+[Script]
+YouTube AD Block = type=http-response,pattern=^https?:\/\/www\.youtube\.com,requires-body=1,max-size=2097152,script-path=https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Script/YouTubeAds.js
+```
 
 
 
@@ -89,7 +112,7 @@ Working on it...
 ## TODO LIST
 
 - [ ] Bilibili Region Auto Switch
-- [ ] YouTube AD Skip
+- [x] YouTube AD Hide
 - [ ] Content Farm Shield
 - [ ] 18comic AD Rewrite
 - [ ] Pornhub AD Rewrite
