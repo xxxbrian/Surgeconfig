@@ -2,8 +2,8 @@
 
 if ($response.body) {
     var body = $response.body;
-    // if <!DOCTYPE html> is the top string, it's a html page
-    if (body.startsWith("<!DOCTYPE html>")) {
+    // if Content-Type is HTML
+    if ($response.headers['Content-Type'].includes('text/html')) {
         // Main page ads
         body = body.replace("adSlotRenderer", "xxx");
         // Watch page ads
