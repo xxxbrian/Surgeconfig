@@ -8,6 +8,9 @@ if ($response.body) {
         body = body.replace("adSlotRenderer", "xxx");
         // Watch page ads
         body = body.replace("promotedSparklesWebRenderer", "xxx");
+        // Player ads
+        body = body.replace("adPlacements", "xxx");
+        
     }
     // write back
     $done({ body });
