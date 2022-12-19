@@ -54,6 +54,22 @@ Low.
 https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Module/YouTubeAds.sgmodule
 ```
 
+### Google Search AD Block
+
+**Desc:**
+
+Hide all advertising on the top of the search results page.
+
+**Effective Order:**
+
+Low.
+
+**Install:**
+
+```
+https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Module/GoogleAds.sgmodule
+```
+
 
 
 ## Rule Set
@@ -98,6 +114,7 @@ https://github.com/xxxbrian/Surgeconfig/blob/main/Rule/TencentVideo.list
 
 ## TODO LIST
 
+- [x] Google Search AD Hide
 - [ ] Bilibili Region Auto Switch
 - [x] YouTube Web AD Hide
 - [x] YouTube App AD Hide

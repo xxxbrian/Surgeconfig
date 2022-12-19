@@ -1,0 +1,8 @@
+#!name=Google Search AD Block
+#!desc=Hide all advertising on the top of the search results page.
+
+[Script]
+Google Search AD Block = type=http-response,pattern=^https?:\/\/www\.google\.com\/search\?q,requires-body=1,max-size=2097152,script-path=https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Script/GoogleSearchAds.js
+
+[MITM]
+hostname = %APPEND% www.google.com
