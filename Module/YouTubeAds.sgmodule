@@ -2,18 +2,24 @@
 #!desc=Removes all ads of YouTube: pre-roll video ads, text & banner ads.
 
 [Rule]
+# YouTube Web
 AND,((PROTOCOL,UDP),(DEST-PORT,443)),REJECT-NO-DROP
+URL-REGEX,^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad,REJECT
+URL-REGEX,^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v\d\/player\/ad_break,REJECT
+URL-REGEX,^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads,REJECT
+URL-REGEX,^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking),REJECT
+URL-REGEX,^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext,REJECT
+# YouTube App
+URL-REGEX,^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad,REJECT-TINYGIF
 
 [URL Rewrite]
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 header
-^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad - reject
-^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v\d\/player\/ad_break - reject
-^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads - reject
-^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) - reject
-^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext - reject
 
 [Script]
-YouTube AD Block = type=http-response,pattern=^https?:\/\/www\.youtube\.com,requires-body=1,max-size=2097152,script-path=https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Script/YouTubeAds.js
+# YouTube Web
+YouTube Web AD Block = type=http-response,pattern=^https?:\/\/www\.youtube\.com,requires-body=1,max-size=2097152,script-path=https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Script/YouTubeAdsWeb.js
+# YouTube App
+youtube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide),requires-body=1,binary-body-mode=1,max-size=3145728,script-path=https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Script/YouTubeAdsApp.js
 
 [MITM]
 hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com

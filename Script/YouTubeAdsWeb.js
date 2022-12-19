@@ -1,4 +1,4 @@
-// Hide Element of YouTube Ads
+// Hide Element of YouTube Ads (Web)
 
 if ($response.body) {
     var body = $response.body;

@@ -92,19 +92,6 @@ https://github.com/xxxbrian/Surgeconfig/blob/main/Rule/TencentVideo.list
 
 
 
-## Script
-
-### YouTube Ads
-
-Hide pic ads elements of YouTube Web.
-
-```
-[Script]
-YouTube AD Block = type=http-response,pattern=^https?:\/\/www\.youtube\.com,requires-body=1,max-size=2097152,script-path=https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Script/YouTubeAds.js
-```
-
-
-
 ------
 
 
@@ -112,7 +99,8 @@ YouTube AD Block = type=http-response,pattern=^https?:\/\/www\.youtube\.com,requ
 ## TODO LIST
 
 - [ ] Bilibili Region Auto Switch
-- [x] YouTube AD Hide
+- [x] YouTube Web AD Hide
+- [x] YouTube App AD Hide
 - [ ] Content Farm Shield
 - [ ] 18comic AD Rewrite
 - [ ] Pornhub AD Rewrite
