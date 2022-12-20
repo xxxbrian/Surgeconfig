@@ -70,6 +70,22 @@ Low.
 https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Module/GoogleAds.sgmodule
 ```
 
+### Nicegram Premium
+
+**Desc:**
+
+Unlock Nicegram Premium.
+
+**Effective Order:**
+
+Low.
+
+**Install:**
+
+```
+https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Module/NicegramPremium.sgmodule
+```
+
 
 
 ## Rule Set
@@ -121,3 +137,4 @@ https://github.com/xxxbrian/Surgeconfig/blob/main/Rule/TencentVideo.list
 - [ ] Content Farm Shield
 - [ ] 18comic AD Rewrite
 - [ ] Pornhub AD Rewrite
+- [x] Unlock Nicegram Premium
