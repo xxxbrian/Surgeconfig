@@ -4,7 +4,7 @@ function findclassdiv(page, element) {
     var divs = [];
     var start = 0;
     while (start > -1) {
-        start = page.indexOf('<div class="' + element + '">', start);
+        start = page.indexOf('<div ' + element + '>', start);
         if (start > -1) {
             var num_div = 1;
             var sub_start = start + 1;
@@ -43,14 +43,24 @@ function hideclassdiv(page, point) {
     return page;
 }
 
+function handleBody(body, elements) {
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        // find the divs to hide
+        var l = findclassdiv(body, element);
+        // hide the divs
+        body = hideclassdiv(body, l);
+    }
+    return body;
+}
+
 if ($response.body) {
     var body = $response.body;
     // if Content-Type is HTML
     if ($response.headers["Content-Type"].includes("text/html")) {
-        // find the divs to hide
-        var l = findclassdiv(body, "uEierd");
-        // hide the divs
-        body = hideclassdiv(body, l);
+        // list of elements need to hide
+        elements = ['id="tvcap"']
+        body = handleBody(body, elements);
     }
     // write back
     $done({ body });
