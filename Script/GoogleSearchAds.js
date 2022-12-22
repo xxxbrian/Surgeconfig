@@ -4,7 +4,7 @@ function findclassdiv(page, element) {
     var divs = [];
     var start = 0;
     while (start > -1) {
-        start = page.indexOf('<div ' + element + '>', start);
+        start = page.indexOf('<div ' + element, start);
         if (start > -1) {
             var num_div = 1;
             var sub_start = start + 1;
@@ -48,6 +48,7 @@ function handleBody(body, elements) {
         var element = elements[i];
         // find the divs to hide
         var l = findclassdiv(body, element);
+        console.log("Found " + l.length + " divs " + element + " to hide");
         // hide the divs
         body = hideclassdiv(body, l);
     }
@@ -59,7 +60,7 @@ if ($response.body) {
     // if Content-Type is HTML
     if ($response.headers["Content-Type"].includes("text/html")) {
         // list of elements need to hide
-        elements = ['id="tvcap"']
+        elements = ['id="tvcap"', 'id="tadsb"']
         body = handleBody(body, elements);
     }
     // write back
