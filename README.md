@@ -88,6 +88,24 @@ https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Module/NicegramPremi
 
 
 
+### QQ Mail Web Icon Fix
+
+**Desc:**
+
+Fixes the icon of QQ Mail Web.
+
+**Effective Order:**
+
+Low.
+
+**Install:**
+
+```
+https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Module/QQMailIcon.sgmodule
+```
+
+
+
 ## Rule Set
 
 ### AD Block

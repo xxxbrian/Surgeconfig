@@ -1,0 +1,8 @@
+#!name=QQ Mail Web Icon Fix
+#!desc=Fixes the icon of QQ Mail Web.
+
+[URL Rewrite]
+^https://mail\.qq\.com/zh_CN/htmledition/images/favicon/qqmail_favicon_[0-9]+h\.png https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Asset/qqmail/favicon.png header
+
+[MITM]
+hostname = %APPEND% mail.qq.com
