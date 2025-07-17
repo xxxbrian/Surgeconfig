@@ -1,0 +1,8 @@
+#!name=DNS IP Embed
+#!desc=Convert *.ip domains to IP addresses (11.22.33.44.ip → 11.22.33.44, 11.22.33.ip → random /24)
+
+[Host]
+*.ip = script:EmbedDNS
+
+[Script]
+EmbedDNS = type=dns,script-path=https://raw.githubusercontent.com/xxxbrian/Surgeconfig/main/Script/DnsEmbed.js,engine=jsc,timeout=0,script-update-interval=21600,max-size=0
